@@ -1,6 +1,5 @@
 // require('./src/loaders/env')
 // SERVER
-// require('./startMongo')
 const { myApp } = require('./src/index.js') // eslint-disable-line
 
 console.log('----')
