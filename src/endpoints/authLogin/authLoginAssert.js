@@ -1,18 +1,15 @@
 const {
-  equal,
-} = require('assert')
-const {
-  isPasswordFormatValid,
   assertEmail,
+  assertValidPassword,
 } = require('../../helpers')
 
 const authLoginAssert = ({
   body: {
-    password = '',
-    email = '',
-  } = {},
-} = {}) => {
-  equal(isPasswordFormatValid(password), true, 'Format de mot de passe incorrect')
+    password,
+    email,
+  },
+}) => {
+  assertValidPassword(password, 'password')
   assertEmail(email, 'email')
 }
 

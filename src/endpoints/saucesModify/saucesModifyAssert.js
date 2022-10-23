@@ -5,20 +5,20 @@ const {
 } = require('../../helpers')
 
 const saucesModifyAssert = ({
-  body = {},
+  body,
   body: {
     sauce: bodySauce = {},
-  } = {},
+  },
   protocol,
   file,
   file: {
-    filename = '',
-  } = {},
+    filename,
+  },
   host,
   params: {
-    id = '',
-  } = {},
-} = {}) => {
+    id,
+  },
+}) => {
   assertNonEmptyString(host, 'host')
   assertNonEmptyString(id, 'id')
   assertOneOf(protocol, ['http', 'https'], 'protocol')

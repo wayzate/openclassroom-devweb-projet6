@@ -1,6 +1,4 @@
 // ============================== Imports ========================
-// ==== Community
-// Web server
 const express = require('express')
 const cors = require('cors')()
 const helmet = require('helmet')
@@ -8,9 +6,6 @@ const bodyParser = require('body-parser')
 const session = require('cookie-session')
 const mongoose = require('mongoose')
 const path = require('path')
-
-// ==== Helpers
-// const _ = require('lodash')
 
 // ============================== Express server ========================
 const app = express()
@@ -80,7 +75,7 @@ const {
   saucesLikeDislikeHandle,
 } = require('./endpoints/saucesLikeDislike')
 
-// ============================== POST endpoints ========================
+// ============================== ENDPOINTS ========================
 app.post('/api/auth/signup', bodyParser.json(), authSignupHandle)
 app.post('/api/auth/login', bodyParser.json(), authLoginHandle)
 app.post('/api/sauces/', bodyParser.json(), authenticateUser, multer, saucesCreateHandle)

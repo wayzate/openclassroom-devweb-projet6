@@ -9,10 +9,10 @@ const {
 
 const signupAssert = ({
   body: {
-    password = '',
-    email = '',
-  } = {},
-} = {}) => {
+    password,
+    email,
+  },
+}) => {
   equal(isPasswordFormatValid(password), true, 'Format de mot de passe incorrect')
   assertEmail(email, 'email')
 }

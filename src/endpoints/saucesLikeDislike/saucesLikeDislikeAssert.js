@@ -5,13 +5,13 @@ const {
 
 const saucesLikeDislikeAssert = ({
   body: {
-    like = 0,
-    userId = '',
-  } = {},
+    like,
+    userId,
+  },
   params: {
-    id = '',
-  } = {},
-} = {}) => {
+    id,
+  },
+}) => {
   assertOneOf(like, [-1, 0, 1], 'like')
   assertNonEmptyString(userId, 'userId')
   assertNonEmptyString(id, 'id')
