@@ -1,0 +1,26 @@
+{
+  "extends": ["airbnb"],
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "fetch": "readonly"
+  },
+  "rules": {
+    "import/no-cycle": 0,
+    "import/no-useless-path-segments": 0,
+    "import/prefer-default-export": 0,
+    "max-len": 0,
+    "no-console": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "object-curly-newline": 0,
+    "quote-props": 0,
+    "semi": ["error", "never"],
+    "camelcase": 0,
+    "no-underscore-dangle": 0,
+    "no-nested-ternary": 0,
+    "no-lonely-if": 0,
+    "quotes": 0
+  }
+}
