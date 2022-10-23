@@ -1,10 +1,6 @@
 const {
-  equal,
-} = require('assert')
-
-const {
-  isPasswordFormatValid,
   assertEmail,
+  assertValidPassword,
 } = require('../../helpers')
 
 const signupAssert = ({
@@ -13,7 +9,7 @@ const signupAssert = ({
     email,
   },
 }) => {
-  equal(isPasswordFormatValid(password), true, 'Format de mot de passe incorrect')
+  assertValidPassword(password, 'password')
   assertEmail(email, 'email')
 }
 
