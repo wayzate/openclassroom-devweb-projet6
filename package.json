@@ -1,22 +1,8 @@
 {
   "name": "openclassroom-devweb-projet6",
   "description": "Projet 6",
-  "heavenConfig": {
-    "HEAVEN_SUBMODULE_PATH_GETBACK": ".."
-  },
   "scripts": {
-    "start": "npx babel-node ./start.js",
-    "startu": "source heaven/sh/loadHeaven.sh && runBackend",
-    "lh": "./heaven/sh/loadHeaven.sh",
-    "deploy": "source heaven/sh/loadHeaven.sh && deployBackend",
-    "deployDev": "FORCE_ENV=development FORCE_ENV_TYPE=backend source heaven/sh/loadHeaven.sh && deployBackend",
-    "deployProd": "FORCE_ENV=production FORCE_ENV_TYPE=backend source heaven/sh/loadHeaven.sh && deployBackend",
-    "startDev": "FORCE_ENV=development FORCE_ENV_TYPE=backend source heaven/sh/loadHeaven.sh && runBackend",
-    "startProd": "FORCE_ENV=production FORCE_ENV_TYPE=backend source heaven/sh/loadHeaven.sh && runBackend",
-    "heavenbash": "FORCE_ENV_TYPE=backend bash --init-file heaven/sh/loadHeaven.sh",
-    "heavenzsh": "FORCE_ENV_TYPE=backend FORCE_ENV=development LOAD_SILENTLY=true source heaven/sh/loadHeaven.sh && LOAD_SILENTLY=false yarnHeavenZsh",
-    "h": "FORCE_ENV_TYPE=backend FORCE_ENV=development LOAD_SILENTLY=true source heaven/sh/loadHeaven.sh && LOAD_SILENTLY=false yarnHeavenZsh",
-    "heavenstandalonezsh": "set +e; (echo 'source heaven/sh/loadHeaven.sh && heavenThemeZshP10k' >> $HOME/.zshrc); (zsh); (sed -i .sedBackup /loadHeaven.sh/d $HOME/.zshrc && rm $HOME/.zshrc.sedBackup); set -e"
+    "start": "npx babel-node ./start.js"
   },
   "dependencies": {
     "@babel/cli": "^7.10.1",

@@ -9,7 +9,7 @@ const path = require('path')
 // ============================== Express server ========================
 const app = express()
 app.use(cors)
-app.use(express.json()) // TO TEST
+app.use(express.json())
 app.use(helmet())
 app.use(session({
   name: 'session',
