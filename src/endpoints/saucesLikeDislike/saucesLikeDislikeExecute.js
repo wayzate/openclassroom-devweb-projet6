@@ -29,7 +29,7 @@ const saucesLikeDislikeExecute = async ({
   if (like === -1) {
     message = "Dislike added"
     await Sauce.updateOne({ _id: id }, {
-      $push: { usersLiked: userId },
+      $push: { usersDisliked: userId },
       $inc: { dislikes: 1 },
     })
   }
