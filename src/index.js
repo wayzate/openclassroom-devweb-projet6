@@ -2,7 +2,6 @@
 const express = require('express')
 const cors = require('cors')()
 const helmet = require('helmet')
-const bodyParser = require('body-parser')
 const session = require('cookie-session')
 const mongoose = require('mongoose')
 const path = require('path')
@@ -10,6 +9,7 @@ const path = require('path')
 // ============================== Express server ========================
 const app = express()
 app.use(cors)
+app.use(express.json()) // TO TEST
 app.use(helmet())
 app.use(session({
   name: 'session',
@@ -76,13 +76,13 @@ const {
 } = require('./endpoints/saucesLikeDislike')
 
 // ============================== ENDPOINTS ========================
-app.post('/api/auth/signup', bodyParser.json(), authSignupHandle)
-app.post('/api/auth/login', bodyParser.json(), authLoginHandle)
-app.post('/api/sauces/', bodyParser.json(), authenticateUser, multer, saucesCreateHandle)
-app.get('/api/sauces/', bodyParser.json(), authenticateUser, saucesGetAllHandle)
-app.get('/api/sauces/:id', bodyParser.json(), authenticateUser, saucesGetOneHandle)
-app.put('/api/sauces/:id', bodyParser.json(), authenticateUser, multer, saucesModifyHandle)
-app.delete('/api/sauces/:id', bodyParser.json(), authenticateUser, saucesDeleteHandle)
-app.post('/api/sauces/:id/like', bodyParser.json(), authenticateUser, saucesLikeDislikeHandle)
+app.post('/api/auth/signup', authSignupHandle)
+app.post('/api/auth/login', authLoginHandle)
+app.post('/api/sauces/', authenticateUser, multer, saucesCreateHandle)
+app.get('/api/sauces/', authenticateUser, saucesGetAllHandle)
+app.get('/api/sauces/:id', authenticateUser, saucesGetOneHandle)
+app.put('/api/sauces/:id', authenticateUser, multer, saucesModifyHandle)
+app.delete('/api/sauces/:id', authenticateUser, saucesDeleteHandle)
+app.post('/api/sauces/:id/like', authenticateUser, saucesLikeDislikeHandle)
 
 exports.myApp = server
