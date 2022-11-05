@@ -57,6 +57,7 @@ const saucesModifyHandle = async (req, res) => {
         data = {},
       } = {},
     } = e || {}
+    console.error(e)
     res.status(400).send({
       message,
       responseData: data,

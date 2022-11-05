@@ -8,7 +8,7 @@ const {
 const saucesModifyExecute = async ({
   body = {},
   body: {
-    sauce: bodySauce = {},
+    sauce: bodySauceString = {},
   } = {},
   dbResults: {
     sauce: {
@@ -31,7 +31,7 @@ const saucesModifyExecute = async ({
     unlinkSync(`images/${imageUrl.split('/images/')[1]}`)
 
     newSauce = {
-      ...JSON.parse(bodySauce),
+      ...JSON.parse(bodySauceString),
       imageUrl: `${protocol}://${host}/images/${
         filename
       }`,

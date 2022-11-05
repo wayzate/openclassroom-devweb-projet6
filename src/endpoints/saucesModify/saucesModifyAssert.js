@@ -7,17 +7,17 @@ const {
 const saucesModifyAssert = ({
   body,
   body: {
-    sauce: bodySauce = {},
-  },
+    sauce: bodySauceString = {},
+  } = {},
   protocol,
   file,
   file: {
     filename,
-  },
+  } = {},
   host,
   params: {
     id,
-  },
+  } = {},
 }) => {
   assertNonEmptyString(host, 'host')
   assertNonEmptyString(id, 'id')
@@ -25,8 +25,8 @@ const saucesModifyAssert = ({
 
   const isFileImageProvided = !!file
   if (isFileImageProvided) {
-    assertNonEmptyObject(bodySauce)
-    assertNonEmptyString(filename)
+    assertNonEmptyString(bodySauceString, 'bodySauceString')
+    assertNonEmptyString(filename, 'filename')
   } else {
     assertNonEmptyObject(body, 'body')
   }
